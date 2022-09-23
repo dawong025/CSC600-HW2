@@ -43,7 +43,7 @@ https://docs.google.com/document/d/1FOT8mdx-UjH9cYgUYDRv1EqRMRSAEFINcxhzR6tLTi0/
 ** ============================================================================ */
 
 export const HONOR_PLEDGE = "I pledge on my honor that this assignment is my own work.";
-export const SIGNATURE = "<your-full-name-here>"; // TODO: FILL ME IN
+export const SIGNATURE = "Darren Wong"; // TODO: FILL ME IN
 
 // If you used any resources, please list them here
 export const RESOURCES_CONSULTED = [
@@ -117,9 +117,21 @@ Example:
 ** ----------------------------------------------------- */
 
 export function filterFiveItemRow<T>(row: fiveItemRow<T>, cond: (arg: T) => boolean): T[] {
-    throw Error("TODO");
+    let keepArray: T[] = [];
+    for(let i = 0; i < row.entries.length; i++){
+        if(cond(row.entries[i])){
+            keepArray.push(row.entries[i]);
+        }
+    }
+    return keepArray;
 }
 
+//Q1a Testing Code
+console.log("Q1a." + filterFiveItemRow(row1, (arg) => arg === 'Z'));
+console.log("Q1a." + filterFiveItemRow(row2, (arg) => arg === 'K'));
+console.log("Q1a." + filterFiveItemRow(row3, (arg) => arg !== 'K'));
+console.log("Q1a." + filterFiveItemRow(row4, (arg) => arg === 'S'));
+console.log("Q1a." + filterFiveItemRow(row5, (arg) => arg === 'S' || arg === 'O'));
 
 /* ----------------------------------------------------- **
 ### 1b. Complete the function definition below. (10 pts)
@@ -140,13 +152,55 @@ Example:
     dropFiveItemRow(row1, [1, 2]) = [ 'J', 'E', 'R' ]
 
 Example:
-    dropFiveItemRow(row1, [1, 2, 3, 4]) = [ 'R' ]
+    dropFiveItemRow(row1, [1, 2, 3, 0]) = [ 'R' ]
 
 ** ----------------------------------------------------- */
 
-export function dropFiveItemRow<T>(row: fiveItemRow<T>, indices: number[]): T[] {
-    throw Error("TODO");
+export function insertSort(arr: number[], size: number): number[] {
+    let sortedArr: number[] = [];
+    //copy the array from param
+    for(let i = 0; i < size; i++){
+        sortedArr.push(arr[i]);
+    }
+
+    for(let i = 1; i < size; i++){
+        let key = sortedArr[i];
+        let j = i - 1;
+
+        while(key < sortedArr[j] && j >= 0){
+            sortedArr[j + 1] = sortedArr[j];
+            --j;
+        }
+        sortedArr[j + 1] = key;
+    }
+    
+    return sortedArr;
 }
+export function dropFiveItemRow<T>(row: fiveItemRow<T>, indices: number[]): T[] {
+    let keepArray: T[] = [];
+    if(indices.length == 0){
+        return row.entries;
+    }
+    else{
+        let sortedIndices = insertSort(indices, indices.length);
+        
+        for(let i = 0; i < row.entries.length; i++){
+            keepArray.push(row.entries[i]);
+        }
+        for(let i = sortedIndices.length - 1; i >= 0; i--){
+            keepArray.splice(sortedIndices[i], 1);
+        }
+
+        return keepArray;
+    } 
+}
+
+//Q1b Testing Code
+console.log("Q1b." + dropFiveItemRow(row1, []));
+console.log("Q1b." + dropFiveItemRow(row1, [4]));
+console.log("Q1b." + dropFiveItemRow(row1, [3, 2]));
+console.log("Q1b." + dropFiveItemRow(row1, [1, 2]));
+console.log("Q1b." + dropFiveItemRow(row1, [1, 2, 3, 0]));
 
 /* ----------------------------------------------------- **
 ### 1c. Complete the function definition below. (10 pts)
@@ -172,9 +226,17 @@ Example:
 ** ----------------------------------------------------- */
 
 export function mapFiveItemRow<S, T>(row: fiveItemRow<S>, f: (arg: S) => T): fiveItemRow<T> {
-    throw Error("TODO");
+    let newRow: fiveItemRow<T> = {
+        entries: [f(row.entries[0]), f(row.entries[1]), f(row.entries[2]), f(row.entries[3]), f(row.entries[4])],
+    };
+    return newRow;
+
 }
-  
+
+//Q1c Testing Code
+console.log("Q1c." + mapFiveItemRow(row1, (arg) => 0).entries);
+console.log("Q1c." + mapFiveItemRow(row1, (arg) => arg + "!").entries);
+console.log("Q1c." + mapFiveItemRow(row1, (arg) => arg.length).entries);
 
 /* ==========================================================================  **
 ## 2. Basic Functions on Wordle Board (30 pts)
@@ -318,9 +380,18 @@ Example:
 ** ----------------------------------------------------- */
 
 export function wordle3GetGuess(wordle: Wordle3, guess: 1|2|3): fiveItemRow<[State, letter]> {
-    throw Error("TODO");
+    if(guess > 0 && guess < 4){
+        return wordle.guesses[guess - 1];
+    }
+    else{
+        throw Error("ERROR: Please enter a guess between 1 and 3");
+    }
 }
 
+//Q2a Testing Code
+console.log("Q2a." + wordle3GetGuess(wordle1, 1).entries);
+console.log("Q2a." + wordle3GetGuess(wordle1, 2).entries);
+console.log("Q2a." + wordle3GetGuess(wordle1, 3).entries); 
 
 /* ----------------------------------------------------- **
 ### 2b. Complete the function definition below. (15 pts)
@@ -440,9 +511,39 @@ Example:
 ** ----------------------------------------------------- */
 
 export function wordle3SetGuess(wordle: Wordle3, guess: 1|2|3, row: fiveItemRow<letter>): Wordle3 {
-    throw Error("TODO");
+    let wordleCopy: Wordle3 = {
+        word: {
+            entries: wordle.word.entries,
+        },
+        guesses: [
+            {
+                entries: wordle.guesses[0].entries
+            },
+            {
+                entries: wordle.guesses[1].entries
+            },
+            {
+                entries: wordle.guesses[2].entries
+            }
+        ]
+    }
+
+    if(guess > 0 && guess < 4){
+        wordleCopy.guesses[guess - 1].entries = [
+            [ 'GUESS', row.entries[0] ],
+            [ 'GUESS', row.entries[1] ],
+            [ 'GUESS', row.entries[2] ],
+            [ 'GUESS', row.entries[3] ],
+            [ 'GUESS', row.entries[4] ]
+        ] 
+    }
+    return wordleCopy;
 }
 
+//Q2b Testing Code
+console.log("Q2b." + wordle3SetGuess(wordle1, 1, {entries: ['M', 'U', 'S', 'E', 'S']}).guesses[0].entries);
+console.log("Q2b." + wordle3SetGuess(wordle1, 1, {entries: ['S', 'A', 'P', 'P', 'Y']}).guesses[0].entries);
+console.log("Q2b." + wordle3SetGuess(wordle1, 3, {entries: ['H', 'A', 'P', 'P', 'Y']}).guesses[2].entries);
 
 /* ==========================================================================  **
 ## 3. Advanced Functions on Wordle Board (40 pts)
@@ -470,9 +571,21 @@ Example:
 ** ----------------------------------------------------- */
 
 export function wordle3UsedLetters(wordle: Wordle3, guess: 1|2|3): letter[] {
-    throw Error("TODO");
+    let matchedLetters: letter[] = [];
+    for(let i = 0; i < wordle.word.entries.length; i++){
+        for(let j = 0; j < wordle.guesses[guess - 1].entries.length; j++){
+            if(wordle.word.entries[i] == wordle.guesses[guess - 1].entries[j][1]){
+                matchedLetters.push(wordle.word.entries[i]);
+            }
+        }
+    }
+    return matchedLetters;
 }
 
+//Q3a Testing Code
+console.log("Q3a. " + wordle3UsedLetters(wordle1, 1));
+console.log("Q3a. " + wordle3UsedLetters(wordle1, 2));
+console.log("Q3a. " + wordle3UsedLetters(wordle1, 3));
 
 /* ----------------------------------------------------- **
 ### 3b. Complete the function definition below. (25 pts)
@@ -710,5 +823,85 @@ Example:
 ** ----------------------------------------------------- */
 
 export function wordle3Update(wordle: Wordle3, guess: 1|2|3): Wordle3 {
-    throw Error("TODO");
+    let wordleCopy: Wordle3 = {
+        word: {
+            entries: wordle.word.entries,
+        },
+        guesses: [
+            {
+                entries: wordle.guesses[0].entries
+            },
+            {
+                entries: wordle.guesses[1].entries
+            },
+            {
+                entries: wordle.guesses[2].entries
+            }
+        ]
+    }
+    for(let i = 0; i < wordle.word.entries.length; i++){
+        //initialize each state to red
+        wordleCopy.guesses[guess - 1].entries[i][0] = "RED";
+    }
+    for(let i = 0; i < wordle.word.entries.length; i++){
+        for(let j = 0; j < wordle.guesses[guess - 1].entries.length; j++)
+            if(wordle.word.entries[i] == wordle.guesses[guess - 1].entries[j][1]){
+                wordleCopy.guesses[guess - 1].entries[j][0] = "GRAY";
+                //console.log("GRAY HERE");
+                continue;
+            }
+    }
+
+    for(let i = 0; i < wordle.word.entries.length; i++){
+        for(let j = 0; j < wordle.guesses[guess - 1].entries.length; j++){
+            // console.log("wordle.word.entries[i]: " + wordle.word.entries[i]);
+            // console.log("wordle.guesses[guess - 1].entries[j][1]: " +wordle.guesses[guess - 1].entries[j][1]);
+            if(wordle.word.entries[i] == wordle.guesses[guess - 1].entries[i][1] && i == j){
+                wordleCopy.guesses[guess - 1].entries[i][0] = "GREEN";
+                //console.log("GREEN HERE");
+                continue;
+            }
+        }
+    }
+    return wordleCopy;
 }
+
+//Q3b Testing Code
+const wordle1_1 = wordle3Update(wordle1, 1);
+
+console.log("Q3b. ");
+console.log(wordle1_1.guesses[0].entries);
+console.log(wordle1_1.guesses[1].entries);
+console.log(wordle1_1.guesses[2].entries);
+
+const wordle1_2 = wordle3Update(wordle1_1, 2);
+
+console.log("Q3b. ");
+console.log(wordle1_2.guesses[0].entries);
+console.log(wordle1_2.guesses[1].entries);
+console.log(wordle1_2.guesses[2].entries);
+
+const wordle1_3 = wordle3Update(wordle1_2, 3);
+console.log("Q3b. ");
+console.log(wordle1_3.guesses[0].entries);
+console.log( wordle1_3.guesses[1].entries); 
+console.log(wordle1_3.guesses[2].entries);
+
+const wordle2_1 = wordle3Update(wordle2, 1);
+console.log("Q3b. ");
+console.log(wordle2_1.guesses[0].entries);
+console.log(wordle2_1.guesses[1].entries); 
+console.log(wordle2_1.guesses[2].entries);
+
+const wordle2_2 = wordle3Update(wordle2_1, 2);
+console.log("Q3b. ");
+console.log(wordle2_2.guesses[0].entries); 
+console.log(wordle2_2.guesses[1].entries); 
+console.log(wordle2_2.guesses[2].entries);
+
+const wordle2_3 = wordle3Update(wordle2_2, 3);
+console.log("Q3b. ");
+console.log(wordle2_3.guesses[0].entries);
+console.log(wordle2_3.guesses[1].entries); 
+console.log(wordle2_3.guesses[2].entries);
+
