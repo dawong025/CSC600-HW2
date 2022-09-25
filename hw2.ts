@@ -127,11 +127,11 @@ export function filterFiveItemRow<T>(row: fiveItemRow<T>, cond: (arg: T) => bool
 }
 
 //Q1a Testing Code
-console.log("Q1a." + filterFiveItemRow(row1, (arg) => arg === 'Z'));
-console.log("Q1a." + filterFiveItemRow(row2, (arg) => arg === 'K'));
-console.log("Q1a." + filterFiveItemRow(row3, (arg) => arg !== 'K'));
-console.log("Q1a." + filterFiveItemRow(row4, (arg) => arg === 'S'));
-console.log("Q1a." + filterFiveItemRow(row5, (arg) => arg === 'S' || arg === 'O'));
+// console.log("Q1a." + filterFiveItemRow(row1, (arg) => arg === 'Z'));
+// console.log("Q1a." + filterFiveItemRow(row2, (arg) => arg === 'K'));
+// console.log("Q1a." + filterFiveItemRow(row3, (arg) => arg !== 'K'));
+// console.log("Q1a." + filterFiveItemRow(row4, (arg) => arg === 'S'));
+// console.log("Q1a." + filterFiveItemRow(row5, (arg) => arg === 'S' || arg === 'O'));
 
 /* ----------------------------------------------------- **
 ### 1b. Complete the function definition below. (10 pts)
@@ -196,11 +196,11 @@ export function dropFiveItemRow<T>(row: fiveItemRow<T>, indices: number[]): T[] 
 }
 
 //Q1b Testing Code
-console.log("Q1b." + dropFiveItemRow(row1, []));
-console.log("Q1b." + dropFiveItemRow(row1, [4]));
-console.log("Q1b." + dropFiveItemRow(row1, [3, 2]));
-console.log("Q1b." + dropFiveItemRow(row1, [1, 2]));
-console.log("Q1b." + dropFiveItemRow(row1, [1, 2, 3, 0]));
+// console.log("Q1b." + dropFiveItemRow(row1, []));
+// console.log("Q1b." + dropFiveItemRow(row1, [4]));
+// console.log("Q1b." + dropFiveItemRow(row1, [3, 2]));
+// console.log("Q1b." + dropFiveItemRow(row1, [1, 2]));
+// console.log("Q1b." + dropFiveItemRow(row1, [1, 2, 3, 0]));
 
 /* ----------------------------------------------------- **
 ### 1c. Complete the function definition below. (10 pts)
@@ -234,9 +234,9 @@ export function mapFiveItemRow<S, T>(row: fiveItemRow<S>, f: (arg: S) => T): fiv
 }
 
 //Q1c Testing Code
-console.log("Q1c." + mapFiveItemRow(row1, (arg) => 0).entries);
-console.log("Q1c." + mapFiveItemRow(row1, (arg) => arg + "!").entries);
-console.log("Q1c." + mapFiveItemRow(row1, (arg) => arg.length).entries);
+// console.log("Q1c." + mapFiveItemRow(row1, (arg) => 0).entries);
+// console.log("Q1c." + mapFiveItemRow(row1, (arg) => arg + "!").entries);
+// console.log("Q1c." + mapFiveItemRow(row1, (arg) => arg.length).entries);
 
 /* ==========================================================================  **
 ## 2. Basic Functions on Wordle Board (30 pts)
@@ -389,9 +389,12 @@ export function wordle3GetGuess(wordle: Wordle3, guess: 1|2|3): fiveItemRow<[Sta
 }
 
 //Q2a Testing Code
-console.log("Q2a." + wordle3GetGuess(wordle1, 1).entries);
-console.log("Q2a." + wordle3GetGuess(wordle1, 2).entries);
-console.log("Q2a." + wordle3GetGuess(wordle1, 3).entries); 
+// console.log("Q2a.");
+// console.log(wordle3GetGuess(wordle1, 1).entries);
+// console.log("Q2a.");
+// console.log(wordle3GetGuess(wordle1, 2).entries);
+// console.log("Q2a.");
+// console.log(wordle3GetGuess(wordle1, 3).entries); 
 
 /* ----------------------------------------------------- **
 ### 2b. Complete the function definition below. (15 pts)
@@ -541,9 +544,12 @@ export function wordle3SetGuess(wordle: Wordle3, guess: 1|2|3, row: fiveItemRow<
 }
 
 //Q2b Testing Code
-console.log("Q2b." + wordle3SetGuess(wordle1, 1, {entries: ['M', 'U', 'S', 'E', 'S']}).guesses[0].entries);
-console.log("Q2b." + wordle3SetGuess(wordle1, 1, {entries: ['S', 'A', 'P', 'P', 'Y']}).guesses[0].entries);
-console.log("Q2b." + wordle3SetGuess(wordle1, 3, {entries: ['H', 'A', 'P', 'P', 'Y']}).guesses[2].entries);
+// console.log("Q2b.");
+// console.log(wordle3SetGuess(wordle1, 1, {entries: ['M', 'U', 'S', 'E', 'S']}).guesses[0].entries);
+// console.log("Q2b.");
+// console.log(wordle3SetGuess(wordle1, 2, {entries: ['S', 'A', 'P', 'P', 'Y']}).guesses[1].entries);
+// console.log("Q2b.");
+// console.log(wordle3SetGuess(wordle1, 3, {entries: ['H', 'A', 'P', 'P', 'Y']}).guesses[2].entries);
 
 /* ==========================================================================  **
 ## 3. Advanced Functions on Wordle Board (40 pts)
@@ -583,9 +589,9 @@ export function wordle3UsedLetters(wordle: Wordle3, guess: 1|2|3): letter[] {
 }
 
 //Q3a Testing Code
-console.log("Q3a. " + wordle3UsedLetters(wordle1, 1));
-console.log("Q3a. " + wordle3UsedLetters(wordle1, 2));
-console.log("Q3a. " + wordle3UsedLetters(wordle1, 3));
+// console.log("Q3a. " + wordle3UsedLetters(wordle1, 1));
+// console.log("Q3a. " + wordle3UsedLetters(wordle1, 2));
+// console.log("Q3a. " + wordle3UsedLetters(wordle1, 3));
 
 /* ----------------------------------------------------- **
 ### 3b. Complete the function definition below. (25 pts)
@@ -847,18 +853,14 @@ export function wordle3Update(wordle: Wordle3, guess: 1|2|3): Wordle3 {
         for(let j = 0; j < wordle.guesses[guess - 1].entries.length; j++)
             if(wordle.word.entries[i] == wordle.guesses[guess - 1].entries[j][1]){
                 wordleCopy.guesses[guess - 1].entries[j][0] = "GRAY";
-                //console.log("GRAY HERE");
                 continue;
             }
     }
 
     for(let i = 0; i < wordle.word.entries.length; i++){
         for(let j = 0; j < wordle.guesses[guess - 1].entries.length; j++){
-            // console.log("wordle.word.entries[i]: " + wordle.word.entries[i]);
-            // console.log("wordle.guesses[guess - 1].entries[j][1]: " +wordle.guesses[guess - 1].entries[j][1]);
             if(wordle.word.entries[i] == wordle.guesses[guess - 1].entries[i][1] && i == j){
                 wordleCopy.guesses[guess - 1].entries[i][0] = "GREEN";
-                //console.log("GREEN HERE");
                 continue;
             }
         }
@@ -867,41 +869,41 @@ export function wordle3Update(wordle: Wordle3, guess: 1|2|3): Wordle3 {
 }
 
 //Q3b Testing Code
-const wordle1_1 = wordle3Update(wordle1, 1);
+// const wordle1_1 = wordle3Update(wordle1, 1);
 
-console.log("Q3b. ");
-console.log(wordle1_1.guesses[0].entries);
-console.log(wordle1_1.guesses[1].entries);
-console.log(wordle1_1.guesses[2].entries);
+// console.log("Q3b. ");
+// console.log(wordle1_1.guesses[0].entries);
+// console.log(wordle1_1.guesses[1].entries);
+// console.log(wordle1_1.guesses[2].entries);
 
-const wordle1_2 = wordle3Update(wordle1_1, 2);
+// const wordle1_2 = wordle3Update(wordle1_1, 2);
 
-console.log("Q3b. ");
-console.log(wordle1_2.guesses[0].entries);
-console.log(wordle1_2.guesses[1].entries);
-console.log(wordle1_2.guesses[2].entries);
+// console.log("Q3b. ");
+// console.log(wordle1_2.guesses[0].entries);
+// console.log(wordle1_2.guesses[1].entries);
+// console.log(wordle1_2.guesses[2].entries);
 
-const wordle1_3 = wordle3Update(wordle1_2, 3);
-console.log("Q3b. ");
-console.log(wordle1_3.guesses[0].entries);
-console.log( wordle1_3.guesses[1].entries); 
-console.log(wordle1_3.guesses[2].entries);
+// const wordle1_3 = wordle3Update(wordle1_2, 3);
+// console.log("Q3b. ");
+// console.log(wordle1_3.guesses[0].entries);
+// console.log( wordle1_3.guesses[1].entries); 
+// console.log(wordle1_3.guesses[2].entries);
 
-const wordle2_1 = wordle3Update(wordle2, 1);
-console.log("Q3b. ");
-console.log(wordle2_1.guesses[0].entries);
-console.log(wordle2_1.guesses[1].entries); 
-console.log(wordle2_1.guesses[2].entries);
+// const wordle2_1 = wordle3Update(wordle2, 1);
+// console.log("Q3b. ");
+// console.log(wordle2_1.guesses[0].entries);
+// console.log(wordle2_1.guesses[1].entries); 
+// console.log(wordle2_1.guesses[2].entries);
 
-const wordle2_2 = wordle3Update(wordle2_1, 2);
-console.log("Q3b. ");
-console.log(wordle2_2.guesses[0].entries); 
-console.log(wordle2_2.guesses[1].entries); 
-console.log(wordle2_2.guesses[2].entries);
+// const wordle2_2 = wordle3Update(wordle2_1, 2);
+// console.log("Q3b. ");
+// console.log(wordle2_2.guesses[0].entries); 
+// console.log(wordle2_2.guesses[1].entries); 
+// console.log(wordle2_2.guesses[2].entries);
 
-const wordle2_3 = wordle3Update(wordle2_2, 3);
-console.log("Q3b. ");
-console.log(wordle2_3.guesses[0].entries);
-console.log(wordle2_3.guesses[1].entries); 
-console.log(wordle2_3.guesses[2].entries);
+// const wordle2_3 = wordle3Update(wordle2_2, 3);
+// console.log("Q3b. ");
+// console.log(wordle2_3.guesses[0].entries);
+// console.log(wordle2_3.guesses[1].entries); 
+// console.log(wordle2_3.guesses[2].entries);
 
