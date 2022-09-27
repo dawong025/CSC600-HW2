@@ -1,0 +1,238 @@
+Problem 1a:
+    input: {"entries":["J","O","K","E","R"]}, (x) => x === 'Z'
+    expected: []
+    actual: []
+    input: {"entries":["P","O","K","E","R"]}, (x) => x === 'K'
+    expected: ["K"]
+    actual: ["K"]
+    input: {"entries":["M","U","S","K","Y"]}, (x) => x !== 'K'
+    expected: ["M","U","S","Y"]
+    actual: ["M","U","S","Y"]
+    input: {"entries":["F","U","S","S","Y"]}, (x) => x === 'S'
+    expected: ["S","S"]
+    actual: ["S","S"]
+    input: {"entries":["H","O","U","S","E"]}, (arg) => arg === 'S' || arg === 'O'
+    expected: ["O","S"]
+    actual: ["O","S"]
+    input: {"entries":["A","B","C","D","E"]}, (x) => x === 'A'
+    expected: ["A"]
+    actual: ["A"]
+    input: {"entries":["F","G","H","I","J"]}, (x) => x === 'B'
+    expected: []
+    actual: []
+    input: {"entries":["K","L","M","N","O"]}, (x) => x !== 'C'
+    expected: ["K","L","M","N","O"]
+    actual: ["K","L","M","N","O"]
+    input: {"entries":["P","Q","R","S","U"]}, (x) => x === 'D'
+    expected: []
+    actual: []
+    input: {"entries":["V","W","X","Y","Z"]}, (arg) => arg === 'E' || arg === 'O'
+    expected: []
+    actual: []
+    Points for problem: 10 out of 10
+
+Problem 1b:
+    input: {"entries":["J","O","K","E","R"]}, []
+    expected: ["J","O","K","E","R"]
+    actual: ["J","O","K","E","R"]
+    input: {"entries":["P","O","K","E","R"]}, [4]
+    expected: ["P","O","K","E"]
+    actual: ["P","O","K","E"]
+    input: {"entries":["M","U","S","K","Y"]}, [3,2]
+    expected: ["M","U","Y"]
+    actual: ["M","U","Y"]
+    input: {"entries":["F","U","S","S","Y"]}, [2,1]
+    expected: ["F","S","Y"]
+    actual: ["F","S","Y"]
+    input: {"entries":["H","O","U","S","E"]}, [4,3,2,1]
+    expected: ["H"]
+    actual: ["H"]
+    input: {"entries":["A","B","C","D","E"]}, []
+    expected: ["A","B","C","D","E"]
+    actual: ["A","B","C","D","E"]
+    input: {"entries":["F","G","H","I","J"]}, [4]
+    expected: ["F","G","H","I"]
+    actual: ["F","G","H","I"]
+    input: {"entries":["K","L","M","N","O"]}, [3,2]
+    expected: ["K","L","O"]
+    actual: ["K","L","O"]
+    input: {"entries":["P","Q","R","S","U"]}, [2,1]
+    expected: ["P","S","U"]
+    actual: ["P","S","U"]
+    input: {"entries":["V","W","X","Y","Z"]}, [4,3,2,1]
+    expected: ["V"]
+    actual: ["V"]
+    Points for problem: 10 out of 10
+
+Problem 1c:
+    input: {"entries":["J","O","K","E","R"]}, (arg) => 0
+    expected: {"entries":[0,0,0,0,0]}
+    actual: {"entries":[0,0,0,0,0]}
+    input: {"entries":["P","O","K","E","R"]}, (arg) => arg + "!"
+    expected: {"entries":["P!","O!","K!","E!","R!"]}
+    actual: {"entries":["P!","O!","K!","E!","R!"]}
+    input: {"entries":["M","U","S","K","Y"]}, (arg) => arg.length
+    expected: {"entries":[1,1,1,1,1]}
+    actual: {"entries":[1,1,1,1,1]}
+    input: {"entries":["F","U","S","S","Y"]}, (arg) => 1
+    expected: {"entries":[1,1,1,1,1]}
+    actual: {"entries":[1,1,1,1,1]}
+    input: {"entries":["H","O","U","S","E"]}, (arg) => 2
+    expected: {"entries":[2,2,2,2,2]}
+    actual: {"entries":[2,2,2,2,2]}
+    input: {"entries":["A","B","C","D","E"]}, (arg) => arg + "."
+    expected: {"entries":["A.","B.","C.","D.","E."]}
+    actual: {"entries":["A.","B.","C.","D.","E."]}
+    input: {"entries":["F","G","H","I","J"]}, (arg) => arg.length * 10
+    expected: {"entries":[10,10,10,10,10]}
+    actual: {"entries":[10,10,10,10,10]}
+    input: {"entries":["K","L","M","N","O"]}, (arg) => 3
+    expected: {"entries":[3,3,3,3,3]}
+    actual: {"entries":[3,3,3,3,3]}
+    input: {"entries":["P","Q","R","S","U"]}, (arg) => 4
+    expected: {"entries":[4,4,4,4,4]}
+    actual: {"entries":[4,4,4,4,4]}
+    input: {"entries":["V","W","X","Y","Z"]}, (arg) => 5
+    expected: {"entries":[5,5,5,5,5]}
+    actual: {"entries":[5,5,5,5,5]}
+    Points for problem: 10 out of 10
+
+Problem 2a:
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1
+    expected: {"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}
+    actual: {"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 2
+    expected: {"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]}
+    actual: {"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 3
+    expected: {"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}
+    actual: {"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 1
+    expected: {"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]}
+    actual: {"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 2
+    expected: {"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    actual: {"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 3
+    expected: {"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    actual: {"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 1
+    expected: {"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    actual: {"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 2
+    expected: {"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    actual: {"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 3
+    expected: {"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}
+    actual: {"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 1
+    expected: {"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    actual: {"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}
+    Points for problem: 15 out of 15
+
+Problem 2b:
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1, {"entries":["J","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1, {"entries":["P","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1, {"entries":["M","U","S","K","Y"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 2, {"entries":["J","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 2, {"entries":["P","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 2, {"entries":["M","U","S","K","Y"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 3, {"entries":["J","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 3, {"entries":["P","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 3, {"entries":["M","U","S","K","Y"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 1, {"entries":["J","O","K","E","R"]}
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    Points for problem: 15 out of 15
+
+Problem 3a:
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1
+    expected: ["K"]
+    actual: ["K"]
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 2
+    expected: []
+    actual: []
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 3
+    expected: ["O","E"]
+    actual: ["O","E"]
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 1
+    expected: ["K","E"]
+    actual: ["K","E"]
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 2
+    expected: ["O","K","E","R"]
+    actual: ["O","K","E","R"]
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 3
+    expected: ["J","O","K","E","R"]
+    actual: ["J","O","K","E","R"]
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 1
+    expected: ["K"]
+    actual: ["K"]
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 2
+    expected: ["K"]
+    actual: ["K"]
+    input: {"word":{"entries":["M","U","S","K","Y"]},"guesses":[{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]}]}, 3
+    expected: ["M","U","S","K","Y"]
+    actual: ["M","U","S","K","Y"]
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1
+    expected: ["K"]
+    actual: ["K"]
+    Points for problem: 15 out of 15
+
+Problem 3b:
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: arguments modified {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    CASE FAILED
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 1
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 1
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: arguments modified {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    CASE FAILED
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 1
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 1
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["RED","F"],["RED","U"],["RED","S"],["RED","S"],["RED","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}, 2
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["RED","F"],["RED","U"],["RED","S"],["RED","S"],["RED","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    actual: arguments modified {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["RED","F"],["RED","U"],["RED","S"],["RED","S"],["RED","Y"]]},{"entries":[["GUESS","H"],["GUESS","O"],["GUESS","U"],["GUESS","S"],["GUESS","E"]]}]}
+    CASE FAILED
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["RED","F"],["RED","U"],["RED","S"],["RED","S"],["RED","Y"]]},{"entries":[["RED","H"],["GREEN","O"],["RED","U"],["RED","S"],["GRAY","E"]]}]}, 3
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","M"],["GUESS","U"],["GUESS","S"],["GUESS","K"],["GUESS","Y"]]},{"entries":[["GUESS","F"],["GUESS","U"],["GUESS","S"],["GUESS","S"],["GUESS","Y"]]},{"entries":[["RED","H"],["GREEN","O"],["RED","U"],["RED","S"],["GRAY","E"]]}]}
+    actual: arguments modified {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","M"],["RED","U"],["RED","S"],["GRAY","K"],["RED","Y"]]},{"entries":[["RED","F"],["RED","U"],["RED","S"],["RED","S"],["RED","Y"]]},{"entries":[["RED","H"],["GREEN","O"],["RED","U"],["RED","S"],["GRAY","E"]]}]}
+    CASE FAILED
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["RED","P"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}, 2
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["RED","P"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    actual: arguments modified {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["RED","P"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]},{"entries":[["GUESS","J"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]}]}
+    CASE FAILED
+    input: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["RED","P"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]},{"entries":[["GREEN","J"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]}]}, 3
+    expected: {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["GUESS","C"],["GUESS","A"],["GUESS","K"],["GUESS","E"],["GUESS","S"]]},{"entries":[["GUESS","P"],["GUESS","O"],["GUESS","K"],["GUESS","E"],["GUESS","R"]]},{"entries":[["GREEN","J"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]}]}
+    actual: arguments modified {"word":{"entries":["J","O","K","E","R"]},"guesses":[{"entries":[["RED","C"],["RED","A"],["GREEN","K"],["GREEN","E"],["RED","S"]]},{"entries":[["RED","P"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]},{"entries":[["GREEN","J"],["GREEN","O"],["GREEN","K"],["GREEN","E"],["GREEN","R"]]}]}
+    CASE FAILED
+    Points for problem: 10 out of 25
+
+Total score: 85 of 100, or 85%
